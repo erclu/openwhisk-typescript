@@ -1,2 +1,10 @@
-node_modules
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+
+bundles
 dist
+node_modules
+
+# Ignore env files
+.env

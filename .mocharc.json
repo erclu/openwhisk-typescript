@@ -1,0 +1,14 @@
+{
+  "diff": true,
+  "extension": [
+    "ts"
+  ],
+  "parallel": true,
+  "recursive": true,
+  "require": "ts-node/register",
+  "spec": "test/**.spec.ts",
+  "watch-files": [
+    "src/**",
+    "test/**"
+  ]
+}

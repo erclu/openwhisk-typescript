@@ -1,21 +1,47 @@
 {
-    "compilerOptions": {
-        "declaration": false,
-        "module": "commonjs",
-        "target": "es6",
-        "noImplicitAny": false,
-        "sourceMap": false,
-        "moduleResolution": "node",
-        "outDir": "dist",
-        "baseUrl": ".",
-        "paths": {
-            "*": [
-                "node_modules/*",
-                "src/types/*"
-            ]
-        }
-    },
-    "include": [
-        "src/**/*"
-    ]
+  "compilerOptions": {
+    // some stricter compiler options
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "strict": true,
+    // ------------------------------
+    "declaration": false,
+    "downlevelIteration": true,
+    // TODO might wanna use this
+    // "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": false,
+    "moduleResolution": "node",
+    // TODO should i use outdir?
+    "outDir": "dist",
+    // TODO find out if baseUrl and paths are needed
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
+    }
+  },
+  // omitted to include everything (webpack config + tests). This way vscode picks up correctly errors and similar.
+  // "include": [
+  //   "src/**/*",
+  //   "test/**/*",
+  //   // TODO find out if this is needed
+  //   // "webpack.config.ts"
+  // ]
 }

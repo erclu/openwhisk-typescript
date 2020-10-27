@@ -1,10 +1,15 @@
-# IBM Cloud Functions TypeScript Starter
+# Apache OpenWhisk TypeScript Starter
 
-A starter kit to build IBM Cloud Functions using:
+<!-- TODO add eslint -->
+<!-- TODO adapt docs to my template -->
+
+A starter kit to build OpenWhisk Functions using:
 - [TypeScript](https://www.TypeScriptlang.org/)
 - [Mocha](https://mochajs.org/)
 - [Webpack](https://webpack.js.org/)
 - [wskdeploy](https://github.com/apache/incubator-openwhisk-wskdeploy)
+
+forked from <https://github.com/IBM-Cloud/openwhisk-typescript>, with additions made by me.
 
 ## Why a starter kit
 
@@ -35,14 +40,14 @@ A starter kit to build IBM Cloud Functions using:
 ```
 
 ## Before you begin
+
 1. Install wskdeploy from [here](https://github.com/apache/incubator-openwhisk-wskdeploy/releases).
 2. Install [Node.js](https://nodejs.org/).
 
 ## Using the starter
 
 1. Run `npm run deploy`.
-2. Get the [starter-apis route](https://console.bluemix.net/openwhisk/apimanagement).
-3. In a browser, request `https://service.us.apiconnect.ibmcloud.com/gws/apigateway/api/<your API Gateway>/api/bolded?message=hello`.
+2. Run `wsk list && wsk api list` to see the created packages, actions and apis.
 
 ## Coding, test, deploy, run
 
@@ -53,7 +58,6 @@ A general development pattern to create, test and deploy new actions is the foll
 3. Add `YourAction: './src/YourAction.ts',` to webpack.config.js's `entry` property.
 4. Run `npm run bundle` to bundle the JavaScript.
 6. Optionally add any default package properties in the `inputs` stanza of manifest.yaml.
-7. Login to IBM Cloud `ibmcloud login`.
 8. Run `npm run deploy` or use `wskdeploy` directly.
 
 ## FAQ

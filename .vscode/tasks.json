@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build-watch",
+      "path": "projects/typescript-starter/",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "revealProblems": "onProblem"
+      },
+      "problemMatcher": [
+        "$tsc-watch"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "bundle-watch",
+      "group": "build",
+      "problemMatcher": [
+        "$ts-webpack-watch"
+      ],
+      "presentation": {
+        "revealProblems": "onProblem"
+      },
+      "label": "npm: bundle-watch",
+      "detail": "webpack --config webpack.config.ts --watch"
+    }
+  ]
+}

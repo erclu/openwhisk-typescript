@@ -1,27 +1,27 @@
-packages:
-  cloud-functions-typescript:
-    version: 1.0
-    license: Apache-2.0
-    inputs:
-      boldMd: "**$TEXT**"
-      strikeMd: "~~$TEXT~~"
-    actions:
-      Bold:
-        function: dist/Bold.js
-        runtime: nodejs:8
-        web-export: true
-      Strikethrough:
-        function: dist/Strikethrough.js
-        runtime: nodejs:8
-        web-export: true
-    apis:
-      starter-apis:
-        api:
-          bolded:
-            Bold:
-              method: GET
-              response: http
-          striked:
-            Strikethrough:
-              method: GET
-              response: http
+# See https://github.com/apache/openwhisk-wskdeploy/tree/master/specification/html for details on the schema
+project:
+  name: typescript-starter
+  packages:
+    hello-package:
+      license: Apache-2.0
+      actions:
+        hello-action:
+          function: bundles/hello.bundled.js
+          runtime: nodejs:12
+          # When setting inputs in a web actions, they cannot be changed at runtime.
+          # inputs:
+          #   ...:
+          #     type: ...
+          #     description: ...
+          #     # value CAN be an environment variable!
+          #     value: ...
+          web: true
+      apis:
+        # This is the API name
+        hello-api:
+          # This is the API base path
+          /:
+            hello:
+              hello-action:
+                method: GET
+                response: http
